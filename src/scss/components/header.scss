@@ -1,0 +1,178 @@
+@use "../config/functions" as *;
+@use "../config/mixins" as *;
+@use "../config/vars" as global;
+
+body._lock{
+  overflow: hidden;
+}
+
+.header {
+	z-index: 50;
+	inline-size: 100%;
+  padding: 60px 0 0 0;
+	transition: background-color var(--bs-transition);
+  background-color: #fff;
+
+  &.scrolled{
+    padding: 10px 0 10px 0;
+		position: fixed;
+  }
+
+	// .header__container
+	&__container {
+		display: flex;
+		block-size: rem(global.$header-height);
+		align-items: center;
+
+		.header-is-sticky & {
+			block-size: rem(global.$header-height - 50);
+		}
+	}
+}
+
+.menu-header{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  &__body{
+    display: flex;
+  }
+  &__list{
+    display: flex;
+    align-items: center;
+  }
+  &__link{
+    color: black;
+    font-size: 20px;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  &__icon{
+    display: none;
+    &._active{
+      & span{
+        transform: scale(0) translate(0px, -50%);
+      }
+      &::before{
+        top: 50%;
+        transform: rotate(-45deg) translate(0px, -50%);
+      }
+      &::after{
+        bottom: 50%;
+        transform: rotate(45deg) translate(0px, 50%);
+      }
+    }
+  }
+  &__item{
+    margin: 0 20px 0 20px;
+  }
+}
+
+.logo-header{
+  z-index: 6;
+    img{
+      height: 36px;
+    }
+}
+
+.header__logo--button{
+  padding: 20px 35px 20px 35px;
+  border: solid 1px #000;
+  font-size: 20px;
+  transition: all 0.3s ease 0s;
+  height: 100%;
+  border-radius: 14px;
+  
+	&:hover{
+		  background-color: #292A32;
+		  color: #fff;
+		}
+}
+
+@media (max-width: 1060px) {
+  .header {
+    padding: 0;
+  }
+  .header__logo--button{
+    height: auto;
+    margin: 30px 0 0 0;
+    font-size: 25px;
+  }
+  .menu-header{
+    &__body{
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background-color: #B9FF66;
+      padding: 100px 30px 30px 30px;
+      transition: left 0.3s ease 0s;
+      overflow: auto;
+      flex-direction: column;
+
+      &::before{
+        position: fixed;
+        content: "";
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 70px;
+        background-color: #fff;
+      }
+      &._active{
+        left: 0px;
+      }
+    }
+    &__link{
+      font-size: 25px;
+    }
+    &__list{
+      flex-direction: column;
+      align-items: start;
+    }
+    &__item:first-child{
+      margin: 0 0 0 0;
+    }
+    &__item{
+      margin: 20px 0 0 0;
+    }
+    &__icon{
+      margin: 0 0 0 20px ;
+      z-index: 5;
+      display: block;
+      position: relative;
+      width: 40px;
+      height: 30px;
+      cursor: pointer;
+      & span,
+      &::before,
+      &::after{
+        left: 0;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        transition: all 0.3s ease 0s;
+        background-color: #000;
+      }
+      &::before,
+      &::after{
+        content: "";
+      }
+      &::before{
+        top:0;
+      }
+      &::after{
+        bottom: 0;
+      }
+      & span{
+        top: 50%;
+        transform: scale(1) translate(0px, -50%);
+      }
+    }
+    
+  }
+}

@@ -1,0 +1,256 @@
+@use "../config/functions" as *;
+@use "../config/mixins" as *;
+
+.footer {
+
+	// .footer__container
+	&__container {
+		display: flex;
+		align-items: center;
+
+		@include media-mx(510) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+	}
+}
+
+.footer-body{
+	width: 100%;
+	padding: 55px 60px 50px 60px;
+	background: var(--black-color);
+	border-top-left-radius: 45px;
+	border-top-right-radius: 45px;
+}
+
+.footer-body-top{
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	&__logo img{
+		width: 180px;
+	}
+	&__socialNetworks{
+		display: flex;
+		& li{
+			margin: 0 0 0 20px;
+		}
+		& li:first-child{
+			margin: 0;
+		}
+	}
+}
+
+.menu-footer{
+	&__list{
+		display: flex;
+	}
+	&__item{
+		margin: 0 40px 0 0;
+		&:last-child{
+			margin: 0;
+		}
+	}
+	&__link{
+		font-size: 18px;
+		text-decoration: underline;
+		color: #fff;
+	}
+}
+
+.footer-body-center{
+	display: flex;
+	height: 185px;
+	margin: 66px 0 50px 0;
+}
+
+.footer-body-center-left{
+	width: 40%;
+	margin: 0 150px 0 0;
+	height: 100%;
+
+	& li{
+		margin: 0 0 20px 0;
+		color: #fff;
+		font-size: 18px;
+		&:first-child{
+			margin: 0 0 27px 0;
+			font-size: 20px;
+			background-color: #B9FF66;
+			width: max-content;
+			border-radius: 7px;
+			padding: 2px 7px 2px 7px;
+			color: #000;
+		}
+		&:last-child{
+			margin: 0;
+		}
+	}
+}
+
+.footer-body-center-right{
+	width: 100%;
+	height: 100%;
+	&__body{
+		display: flex;
+		width: 100%;
+		height: 100%;
+		background-color: #292A32;
+		border-radius: 14px;
+		padding: 60px 40px 60px 40px;
+	}
+	&__input{
+		width: 50%;
+		padding: 0 10px 0 0;
+		& input{
+			border-radius: 14px;
+			padding: 0 0 0 35px;
+			font-size: 18px;
+			width: 100%;
+			border: solid 1px #fff;
+			background-color: transparent;
+			height: 100%;
+			color: #fff;
+			&::placeholder {
+				color: #fff;
+			}
+		}
+	}
+	&__button{
+		width: 50%;
+		padding: 0  0 0 10px;
+		& button{
+			width: 100%;
+			border-radius: 14px;
+			height: 100%;
+			transition: all 0.3s ease 0s;
+			font-size: 18px;
+			background-color: #B9FF66;
+			&:hover{
+				background-color: #292A32;
+				border: solid 1px #fff;
+				color: #fff;
+			}
+		}
+	}
+}
+
+.footer-body-bottom{
+	display: flex;
+	color: #fff;
+	padding: 50px 0 0 0;
+	position: relative;
+	& span{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: #fff;
+	}
+	&__left{
+		margin: 0 40px 0 0;
+	}
+	& a{
+		color: #fff;
+		text-decoration: underline;
+	}
+}
+
+
+@media (max-width: 990px) {
+	.footer-body-center{
+		flex-direction: column;
+		height: auto;
+		margin: 20px 0 50px 0;
+	}
+	.footer-body-center-left{
+		width: 100%;
+		margin: 0 0 20px 0;
+		height: 100%;
+	}
+	.footer-body-center-right{
+		width: 100%;
+		height: 150px;
+		&__body{
+			align-items: center;
+			justify-content: center;
+			padding: 40px;
+		}
+		&__input{
+			height: 100%;
+		}
+		&__button{
+			height: 100%;
+		}
+	}
+	.footer-body-top{
+		flex-wrap: wrap;
+		&__links{
+			width: 100%;
+			margin: 20px 0 0 0;
+			order: 3;
+			grid-column: 1 / -1; 
+		}
+	}
+}
+@media (max-width: 650px) {
+	.footer-body-center-right{
+		&__body{
+			flex-direction: column;
+			padding: 0;
+			background-color: transparent;
+		}
+		&__input{
+			margin: 0 0 20px 0;
+			width: 100%;
+			padding: 0;
+			& input{
+				border-radius: 14px;
+				padding: 0 0 0 35px;
+				font-size: 18px;
+				width: 100%;
+				border: solid 1px #fff;
+				background-color: transparent;
+				height: 100%;
+				color: #fff;
+				&::placeholder {
+					color: #fff;
+				}
+			}
+		}
+		&__button{
+			width: 100%;
+			padding: 0;
+			& button{
+				width: 100%;
+				border-radius: 14px;
+				height: 100%;
+				transition: all 0.3s ease 0s;
+				font-size: 18px;
+				background-color: #B9FF66;
+				&:hover{
+					background-color: #292A32;
+					border: solid 1px #fff;
+					color: #fff;
+				}
+			}
+		}
+	}
+}
+@media (max-width: 650px) {
+	.footer-body-top{
+		&__links{
+			display: none;
+		}
+	}
+}
+
+@media (max-width: 470px) {
+	.footer-body-top{
+		&__socialNetworks{
+			width: 100%;
+			margin: 20px 0 0 0;
+		}
+	}
+}

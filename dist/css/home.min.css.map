@@ -1,0 +1,1 @@
+{"version":3,"sources":["home.scss"],"names":[],"mappings":"AAAA;EACC;;;AAGD;EACC;;AAEA;EACC;EACA;EACA","sourcesContent":["h1 {\r\n\tcolor: red;\r\n}\r\n\r\n.image-wrapper {\r\n\tmargin-block: 24px;\r\n\r\n\timg {\r\n\t\twidth: 320px;\r\n\t\theight: auto;\r\n\t\tobject-fit: contain;\r\n\t}\r\n}\r\n\r\n"],"file":"home.min.css"}
