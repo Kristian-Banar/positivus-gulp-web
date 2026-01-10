@@ -1,1 +1,85 @@
 // Заголовки, общие БЄМ блоки и прочее...
+
+
+.threeD-block{
+      border: solid 1px #191A23;
+      border-radius: 45px;
+      box-shadow: 0 4px 0px #191A23;
+      &.style-white{
+		background-color: #F3F3F3;
+            .services-pages-bottom-item-left{
+                  &__title span{
+                        background-color: #B9FF66;
+                        border-radius: 7px;
+                        padding: 5px;
+                        width: max-content;
+                        font-size: 30px;
+                  }
+                  &__link a{
+                        color: #000;
+                  }
+            }
+	}
+      &.style-green{
+		background-color: #B9FF66;
+            .services-pages-bottom-item-left{
+                  &__title span{
+                        background-color: #FFFFFF;
+                        border-radius: 7px;
+                        padding: 5px;
+                        width: max-content;
+                        font-size: 30px;
+                  }
+                  &__link a{
+                        color: #000;
+                  }
+            }
+	}
+      &.style-black{
+		background-color: #191A23;
+            .services-pages-bottom-item-left{
+                  &__title span{
+                        background-color: #FFFFFF;
+                        border-radius: 7px;
+                        padding: 5px;
+                        width: max-content;
+                        font-size: 30px;
+                  }
+                  &__link a{
+                        color: #fff;
+                  }
+            }
+	}
+}
+
+.button-black button{
+	padding: 20px 35px 20px 35px;
+      background-color: #292A32;
+      width: max-content;
+      border-radius: 14px;
+      color: #fff;
+      font-size: 20px;
+      transition: all 0.3s ease 0s;
+      &:hover{
+            background-color: #fff;
+            color: #292A32;
+      }
+}
+
+.title-backgroundcolor-green {
+      display: flex;
+      font-size: 18px;
+      align-items: center;
+      width: 100%;
+      & div{
+            margin: 0 0 0 40px;
+      }
+      & span{
+            background-color: #B9FF66;
+            color: #000;
+            border-radius: 7px;
+            font-size: 40px;
+            height: max-content;
+            padding: 7px;
+      }
+}

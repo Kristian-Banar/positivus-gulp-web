@@ -195,6 +195,11 @@
 	}
 }
 @media (max-width: 650px) {
+	.footer-body-top{
+		&__links{
+			display: none;
+		}
+	}
 	.footer-body-center-right{
 		&__body{
 			flex-direction: column;
@@ -235,13 +240,6 @@
 					color: #fff;
 				}
 			}
-		}
-	}
-}
-@media (max-width: 650px) {
-	.footer-body-top{
-		&__links{
-			display: none;
 		}
 	}
 }

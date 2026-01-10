@@ -6,15 +6,20 @@ body._lock{
   overflow: hidden;
 }
 
+.page{
+    &.scrolled{
+        padding-top: 128px;
+    }
+}
 .header {
 	z-index: 50;
 	inline-size: 100%;
-  padding: 60px 0 0 0;
+    padding: 60px 0 0 0;
 	transition: background-color var(--bs-transition);
-  background-color: #fff;
+    background-color: #fff;
 
-  &.scrolled{
-    padding: 10px 0 10px 0;
+    &.scrolled{
+        padding: 10px 0 10px 0;
 		position: fixed;
   }
 
@@ -93,8 +98,12 @@ body._lock{
 }
 
 @media (max-width: 1060px) {
+  .page{
+    padding-top: 128px;
+  }
   .header {
-    padding: 0;
+    padding: 10px 0 10px 0;
+		position: fixed;
   }
   .header__logo--button{
     height: auto;
@@ -174,5 +183,11 @@ body._lock{
       }
     }
     
+  }
+}
+
+@media (max-width: 550px) {
+  .page{
+    padding-top: 60px;
   }
 }
