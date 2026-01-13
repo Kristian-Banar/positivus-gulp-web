@@ -5,6 +5,7 @@
       border: solid 1px #191A23;
       border-radius: 45px;
       box-shadow: 0 4px 0px #191A23;
+      transition: all 0.3s ease 0s;
       &.style-white{
 		background-color: #F3F3F3;
             .services-pages-bottom-item-left{
@@ -81,5 +82,16 @@
             font-size: 40px;
             height: max-content;
             padding: 7px;
+      }
+}
+
+@media (max-width: 550px){
+      .title-backgroundcolor-green {
+            flex-direction: column;
+            align-items: flex-start;
+                  
+            & div{
+                  margin: 20px 0 0 0;
+            }
       }
 }

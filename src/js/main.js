@@ -10,15 +10,36 @@
 // import AOS from 'aos'
 // import Swiper, { Navigation, Pagination } from 'swiper';
 
-import { BaseHelpers } from './helpers/base-helpers';
-import { PopupManager } from './modules/popup-manager';
-import { Tabs } from './modules/tabs';
-import { Accordion } from './modules/accordion';
 import { burger_menubar } from './modules/burger-menu';
 import { scroll } from './modules/scroll';
+import { list } from './modules/list';
+import './libs/jquary';
+import { responsible } from './modules/items-persons';
+import "./libs/slick.min"
 
+list()
 scroll()
 burger_menubar()
+responsible()
+
+$(document).ready(function(){
+      $(".testimonials-page__list").slick({
+            dots:true,
+            variableWidth: true,
+            slidesToShow:3,
+            slidesToScroll: 1,
+            centerMode:true,
+            responsive:[
+                  {
+                        breakpoint: 690,
+                        settings: {
+                              slidesToShow: 1
+                        }
+                  }
+            ]
+      });
+})
+
 
 // BaseHelpers.checkWebpSupport();
 
